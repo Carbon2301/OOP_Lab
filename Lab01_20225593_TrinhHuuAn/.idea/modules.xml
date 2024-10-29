@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Days_Of_A_Month_6_4/Days_Of_A_Month_6_4.iml" filepath="$PROJECT_DIR$/Days_Of_A_Month_6_4/Days_Of_A_Month_6_4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exercise_6_3/Exercise_6_3.iml" filepath="$PROJECT_DIR$/Exercise_6_3/Exercise_6_3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FirstPrograms/FirstPrograms.iml" filepath="$PROJECT_DIR$/FirstPrograms/FirstPrograms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaBasics/JavaBasics.iml" filepath="$PROJECT_DIR$/JavaBasics/JavaBasics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Lab01_20225593_TrinhHuuAn.iml" filepath="$PROJECT_DIR$/.idea/Lab01_20225593_TrinhHuuAn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Matrices_6_6/Matrices_6_6.iml" filepath="$PROJECT_DIR$/Matrices_6_6/Matrices_6_6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SortANumericArray_6_5/SortANumericArray_6_5.iml" filepath="$PROJECT_DIR$/SortANumericArray_6_5/SortANumericArray_6_5.iml" />
+    </modules>
+  </component>
+</project>

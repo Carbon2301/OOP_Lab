@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AimsProject/AimsProject.iml" filepath="$PROJECT_DIR$/AimsProject/AimsProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OtherProjects/lab01/Days_Of_A_Month_6_4/Days_Of_A_Month_6_4.iml" filepath="$PROJECT_DIR$/OtherProjects/lab01/Days_Of_A_Month_6_4/Days_Of_A_Month_6_4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OtherProjects/lab01/Exercise_6_3/Exercise_6_3.iml" filepath="$PROJECT_DIR$/OtherProjects/lab01/Exercise_6_3/Exercise_6_3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OtherProjects/lab01/FirstPrograms/FirstPrograms.iml" filepath="$PROJECT_DIR$/OtherProjects/lab01/FirstPrograms/FirstPrograms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/IT3103.744527.2024.1.20225593.TrinhHuuAn.iml" filepath="$PROJECT_DIR$/.idea/IT3103.744527.2024.1.20225593.TrinhHuuAn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OtherProjects/lab01/JavaBasics/JavaBasics.iml" filepath="$PROJECT_DIR$/OtherProjects/lab01/JavaBasics/JavaBasics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AimsProject/Report/Lab02_20225593_TrinhHuuAn/Lab02_20225593_TrinhHuuAn.iml" filepath="$PROJECT_DIR$/AimsProject/Report/Lab02_20225593_TrinhHuuAn/Lab02_20225593_TrinhHuuAn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OtherProjects/lab01/Matrices_6_6/Matrices_6_6.iml" filepath="$PROJECT_DIR$/OtherProjects/lab01/Matrices_6_6/Matrices_6_6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OtherProjects/lab01/SortANumericArray_6_5/SortANumericArray_6_5.iml" filepath="$PROJECT_DIR$/OtherProjects/lab01/SortANumericArray_6_5/SortANumericArray_6_5.iml" />
+    </modules>
+  </component>
+</project>

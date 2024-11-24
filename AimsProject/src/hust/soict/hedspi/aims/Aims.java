@@ -23,10 +23,15 @@ public class Aims {
 //        anOrder.removeDigitalVideoDisc(dvd2);
 
         DigitalVideoDisc[] dvdList = {dvd1, dvd2, dvd3};
-        anOrder.addDigitalVideoDisc(dvd1, dvd2);
+        anOrder.addDigitalVideoDisc(dvdList);
 
 
-        System.out.println("Total cost is: ");
-        System.out.print(anOrder.totalCost());
+//        System.out.println("Total cost is: ");
+//        System.out.print(anOrder.totalCost());
+
+
+        System.out.println("The id of " + dvd1.getTitle() + " is " + dvd1.getId());
+        System.out.println("The id of " + dvd2.getTitle() + " is " + dvd2.getId());
+        System.out.println("The id of " + dvd3.getTitle() + " is " + dvd3.getId());
     }
 }

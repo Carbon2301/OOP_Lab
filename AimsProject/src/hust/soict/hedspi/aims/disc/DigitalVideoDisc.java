@@ -6,15 +6,28 @@ public class DigitalVideoDisc {
     private String director;
     private int length;
     private float cost;
+    private int id;
+
+    // Class variable
+    private static int nbDigitalVideoDiscs = 0;
+
 //    Trinh Huu An 20225593
     public DigitalVideoDisc(String title) {
         this.title = title;
+
+        // Update class variable and assign id
+        nbDigitalVideoDiscs++;
+        this.id = nbDigitalVideoDiscs;
     }
 
     public DigitalVideoDisc(String title, String category, float cost) {
         this.title = title;
         this.category = category;
         this.cost = cost;
+
+        // Update class variable and assign id
+        nbDigitalVideoDiscs++;
+        this.id = nbDigitalVideoDiscs;
     }
 
     public DigitalVideoDisc(String title, String category, String director, float cost) {
@@ -22,6 +35,10 @@ public class DigitalVideoDisc {
         this.category = category;
         this.director = director;
         this.cost = cost;
+
+        // Update class variable and assign id
+        nbDigitalVideoDiscs++;
+        this.id = nbDigitalVideoDiscs;
     }
 
     public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
@@ -30,6 +47,14 @@ public class DigitalVideoDisc {
         this.director = director;
         this.length = length;
         this.cost = cost;
+
+        // Update class variable and assign id
+        nbDigitalVideoDiscs++;
+        this.id = nbDigitalVideoDiscs;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getTitle() {

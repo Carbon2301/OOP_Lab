@@ -75,4 +75,52 @@ public class Cart {
 
         return totalCost;
     }
+
+    public void printCart() {
+        System.out.println("***********************CART***********************");
+        System.out.println("Ordered Items:");
+        for (int i = 0; i < qtyOrdered; i++) {
+            System.out.println((i + 1) + ". " + itemsOrdered[i].toString());
+        }
+        System.out.println("Total cost: " + totalCost() + "$");
+        System.out.println("**************************************************");
+    }
+
+    public boolean search(int id) {
+        for (DigitalVideoDisc disc : itemsOrdered) {
+            if (disc != null && disc.getId() == id) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public DigitalVideoDisc getDiscById(int id) {
+        for (DigitalVideoDisc disc : itemsOrdered) {
+            if (disc != null && disc.getId() == id) {
+                return disc;
+            }
+        }
+        return null;
+    }
+
+    public boolean search(String title) {
+        for (DigitalVideoDisc disc : itemsOrdered) {
+            if (disc != null && disc.isMatch(title)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public DigitalVideoDisc getDiscByTitle(String title) {
+        for (DigitalVideoDisc disc : itemsOrdered) {
+            if (disc != null && disc.isMatch(title)) {
+                return disc;
+            }
+        }
+        return null;
+    }
+
+
 }

@@ -96,4 +96,21 @@ public class DigitalVideoDisc {
     public void setCost(float cost) {
         this.cost = cost;
     }
+
+    @Override
+    public String toString() {
+        return "DVD{" +
+                "Title='" + title + '\'' +
+                ", Category='" + category + '\'' +
+                ", Director='" + director + '\'' +
+                ", Length=" + length +
+                ", Price=" + cost +
+                '}';
+    }
+
+    public boolean isMatch(String title) {
+        return this.title.equalsIgnoreCase(title); // So sánh không phân biệt hoa thường
+    }
+
+
 }

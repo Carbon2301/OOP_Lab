@@ -1,49 +1,58 @@
 package hust.soict.hedspi.aims.store;
+// Trinh Huu An 20225593
+import hust.soict.hedspi.aims.media.Media;
 
-import hust.soict.hedspi.aims.disc.DigitalVideoDisc;
-//Trinh Huu An 20225593
+import java.util.ArrayList;
+
 public class Store {
-    private DigitalVideoDisc[] itemsInStore;  // Mảng DVD có sẵn trong cửa hàng
-    private int numItems; // Số lượng DVD hiện có trong cửa hàng
+    private ArrayList<Media> itemsInStore = new ArrayList<Media>();
 
-    public Store() {
-        itemsInStore = new DigitalVideoDisc[100];  // Giả sử cửa hàng có thể chứa tối đa 100 DVD
-        numItems = 0;
-    }
-
-    // Phương thức thêm DVD vào cửa hàng
-    public void addDVD(DigitalVideoDisc dvd) {
-        if (numItems < itemsInStore.length) {
-            itemsInStore[numItems] = dvd;
-            numItems++;
-            System.out.println("DVD added: " + dvd.getTitle());
-        } else {
-            System.out.println("Store is full, cannot add more DVDs.");
-        }
-    }
-
-    // Phương thức xóa DVD khỏi cửa hàng
-    public void removeDVD(DigitalVideoDisc dvd) {
-        for (int i = 0; i < numItems; i++) {
-            if (itemsInStore[i].getId() == dvd.getId()) {  // So sánh theo ID
-                for (int j = i; j < numItems - 1; j++) {
-                    itemsInStore[j] = itemsInStore[j + 1];  // Dịch các phần tử về trước
-                }
-                itemsInStore[numItems - 1] = null;  // Xóa phần tử cuối cùng
-                numItems--;
-                System.out.println("DVD removed: " + dvd.getTitle());
-                return;
+    public void addMedia(Media media) {
+        boolean existed = false;
+        for (Media item : itemsInStore) {
+            if (item.getTitle().equals(media.getTitle())) {
+                existed = true;
+                break;
             }
         }
-        System.out.println("DVD not found in the store.");
+
+        if (!existed) {
+            itemsInStore.add(media);
+            System.out.println("The media has been added in Store.");
+        } else {
+            System.out.println("The media is already in the store.");
+        }
     }
 
-    // Phương thức in ra danh sách các DVD trong cửa hàng
-    public void printStore() {
-        System.out.println("*************** Store Inventory ***************");
-        for (int i = 0; i < numItems; i++) {
-            System.out.println((i + 1) + ". " + itemsInStore[i]);
+    public void removeMedia(Media media) {
+        boolean existed = false;
+        for (Media item : itemsInStore) {
+            if (item.getTitle().equals(media.getTitle())) {
+                itemsInStore.remove(item);
+                System.out.println("The media has been removed from Store.");
+                existed = true;
+                break;
+            }
         }
-        System.out.println("**********************************************");
+
+        if (!existed) {
+            System.out.println("The media is not in the store.");
+        }
+    }
+
+    public void printStore() {
+        for (Media media : itemsInStore) {
+            System.out.println(media.toString());
+        }
+    }
+
+    public Media searchByTitle(String title) {
+        for (Media media : itemsInStore) {
+            if (media.getTitle().equals(title)) {
+                return media;
+            }
+        }
+
+        return null;
     }
 }

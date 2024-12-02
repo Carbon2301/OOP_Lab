@@ -38,6 +38,13 @@ public class Track implements Playable {
         else System.out.println("Track length: " + getLength());
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Track track = (Track) o;
+        return length == track.length && Objects.equals(title, track.title);
+    }
 
     @Override
     public String toString() {

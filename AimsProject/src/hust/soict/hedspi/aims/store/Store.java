@@ -1,5 +1,5 @@
 package hust.soict.hedspi.aims.store;
-// Trinh Huu An 20225593
+
 import hust.soict.hedspi.aims.media.Media;
 
 import java.util.ArrayList;
@@ -54,5 +54,9 @@ public class Store {
         }
 
         return null;
+    }
+
+    public ArrayList<Media> getItemsInStore() {
+        return itemsInStore;
     }
 }

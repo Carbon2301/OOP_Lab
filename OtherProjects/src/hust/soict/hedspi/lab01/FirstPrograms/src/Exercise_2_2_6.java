@@ -1,4 +1,4 @@
-package hedspi.lab01.FirstPrograms.src;
+package hust.soict.hedspi.lab01.FirstPrograms.src;
 
 import java.util.Scanner;
 

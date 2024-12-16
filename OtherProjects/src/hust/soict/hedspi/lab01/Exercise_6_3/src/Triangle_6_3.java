@@ -1,4 +1,4 @@
-package hedspi.lab01.Exercise_6_3.src;
+package hust.soict.hedspi.lab01.Exercise_6_3.src;
 
 import java.util.Scanner;
 

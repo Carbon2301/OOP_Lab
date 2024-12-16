@@ -4,6 +4,8 @@ import hust.soict.hedspi.aims.cart.Cart;
 import hust.soict.hedspi.aims.media.*;
 import hust.soict.hedspi.aims.store.Store;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Aims {

@@ -1,4 +1,4 @@
-package hedspi.lab01.JavaBasics.src;
+package hust.soict.hedspi.lab01.JavaBasics.src;
 
 import javax.swing.JOptionPane;
 

@@ -1,4 +1,4 @@
-package hedspi.lab01.Days_Of_A_Month_6_4.src;
+package hust.soict.hedspi.lab01.Days_Of_A_Month_6_4.src;
 
 import java.util.Scanner;
 

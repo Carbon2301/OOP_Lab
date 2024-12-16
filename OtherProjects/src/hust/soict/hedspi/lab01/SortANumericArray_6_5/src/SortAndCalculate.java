@@ -1,4 +1,4 @@
-package hedspi.lab01.SortANumericArray_6_5.src;
+package hust.soict.hedspi.lab01.SortANumericArray_6_5.src;
 
 import java.util.Arrays;
 import java.util.Scanner;

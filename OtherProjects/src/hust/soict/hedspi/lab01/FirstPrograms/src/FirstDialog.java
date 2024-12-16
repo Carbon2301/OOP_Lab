@@ -1,4 +1,4 @@
-package hedspi.lab01.FirstPrograms.src;//Example 2 : FirstDialog.java
+package hust.soict.hedspi.lab01.FirstPrograms.src;//Example 2 : FirstDialog.java
 import javax.swing.JOptionPane; // Import thư viện để hiển thị các hộp thoại thông báo
 
 public class FirstDialog { // Khai báo lớp FirstDialog

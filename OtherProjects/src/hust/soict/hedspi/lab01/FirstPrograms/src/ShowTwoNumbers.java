@@ -1,4 +1,4 @@
-package hedspi.lab01.FirstPrograms.src;//Example 5 : ShowTwoNumbers.java
+package hust.soict.hedspi.lab01.FirstPrograms.src;//Example 5 : ShowTwoNumbers.java
 import javax.swing.JOptionPane;
 public class ShowTwoNumbers { // Khai báo lớp ShowTwoNumbers
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package hedspi.lab01.FirstPrograms.src;
+package hust.soict.hedspi.lab01.FirstPrograms.src;
 
 //Example 1: HelloWorld.java
 //Text printing program

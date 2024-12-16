@@ -1,4 +1,4 @@
-package hedspi.lab01.FirstPrograms.src;
+package hust.soict.hedspi.lab01.FirstPrograms.src;
 
 import javax.swing.JOptionPane; // Import thư viện để sử dụng các hộp thoại nhập và thông báo
 

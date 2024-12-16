@@ -1,4 +1,4 @@
-package hedspi.lab01.Matrices_6_6.src;
+package hust.soict.hedspi.lab01.Matrices_6_6.src;
 
 import java.util.Scanner;
 

@@ -3,60 +3,64 @@ package hust.soict.hedspi.aims.store;
 import hust.soict.hedspi.aims.media.Media;
 
 import java.util.ArrayList;
-
+//Trinh Huu An 20225593
 public class Store {
-    private ArrayList<Media> itemsInStore = new ArrayList<Media>();
+    private ArrayList<Media> itemsAvailable = new ArrayList<Media>();
 
-    public void addMedia(Media media) {
-        boolean existed = false;
-        for (Media item : itemsInStore) {
-            if (item.getTitle().equals(media.getTitle())) {
-                existed = true;
-                break;
-            }
-        }
+    public void addMedia(Media media){
+        itemsAvailable.add(media);
+        System.out.println("Added successfully");
+    }
 
-        if (!existed) {
-            itemsInStore.add(media);
-            System.out.println("The media has been added in Store.");
-        } else {
-            System.out.println("The media is already in the store.");
+    public void removeMedia(Media media){
+        if(!itemsAvailable.contains(media)){
+            System.out.println("The selected items is not in the cart");
+            return;
+        }else{
+            itemsAvailable.remove(media);
+            System.out.println("Removed successfully");
         }
     }
 
-    public void removeMedia(Media media) {
-        boolean existed = false;
-        for (Media item : itemsInStore) {
-            if (item.getTitle().equals(media.getTitle())) {
-                itemsInStore.remove(item);
-                System.out.println("The media has been removed from Store.");
-                existed = true;
-                break;
-            }
-        }
-
-        if (!existed) {
-            System.out.println("The media is not in the store.");
-        }
-    }
-
-    public void printStore() {
-        for (Media media : itemsInStore) {
+    public void print(){
+        System.out.println("************************************LIST OF ITEMS IN STORE********************************");
+        for(Media media : this.itemsAvailable){
             System.out.println(media.toString());
         }
+        System.out.println("******************************************************************************************");
     }
 
-    public Media searchByTitle(String title) {
-        for (Media media : itemsInStore) {
-            if (media.getTitle().equals(title)) {
+    public Media findMediaById(int id){
+        for (Media media : this.itemsAvailable){
+            if(media.getId() == id){
                 return media;
-            }
+            };
         }
+        return null;
+    }
 
+    public void printMedia(Media media){
+        System.out.println(media.toString());
+    }
+
+    public Media findMediaByTitle(String title){
+        String regex = "^[a-zA-Z 0-9]+$";
+        if(title.matches(regex)){
+            for (Media media: this.itemsAvailable){
+                if (media.getTitle().equals(title)){
+                    printMedia(media);
+                    return media;
+                }
+            }
+        }else{
+            System.out.println("Invalid title");
+            return null;
+        }
         return null;
     }
 
     public ArrayList<Media> getItemsInStore() {
-        return itemsInStore;
+        return itemsAvailable;
     }
+
 }

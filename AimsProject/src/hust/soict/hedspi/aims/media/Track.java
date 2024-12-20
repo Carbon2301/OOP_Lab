@@ -1,13 +1,16 @@
 package hust.soict.hedspi.aims.media;
-// Trinh Huu An 20225593
-import java.util.Objects;
-
+//Trinh Huu An 20225593
+import hust.soict.hedspi.aims.exception.PlayerException;
 public class Track implements Playable {
     private String title;
     private int length;
 
-    public Track() {
-        super();
+    public String getTitle() {
+        return title;
+    }
+
+    public int getLength() {
+        return length;
     }
 
     public Track(String title, int length) {
@@ -15,41 +18,22 @@ public class Track implements Playable {
         this.length = length;
     }
 
-    public String getTitle() {
-        return title;
-    }
+    @Override
+    public boolean equals(Object obj){
+        if(this == obj) return true;
+        if(obj == null || getClass() != obj.getClass()) return false;
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public int getLength() {
-        return length;
-    }
-
-    public void setLength(int length) {
-        this.length = length;
+        Track track = (Track) obj;
+        return title.equals(track.title) && length == track.getLength();
     }
 
     @Override
-    public void play() {
-        System.out.println("Playing track: " + getTitle());
-        if (getLength() == 0) System.out.println("Track cannot be played.");
-        else System.out.println("Track length: " + getLength());
+    public void play() throws PlayerException {
+        if (this.getLength() <= 0) {
+            throw new PlayerException("Track length is invalid!");
+        }
+        System.out.println("Playing Track: " + this.getTitle());
+        System.out.println("Track length: " + this.getLength());
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Track track = (Track) o;
-        return length == track.length && Objects.equals(title, track.title);
-    }
-
-    @Override
-    public String toString() {
-        return "Track: " +
-                "title = '" + title + '\'' +
-                " - length = " + length;
-    }
 }

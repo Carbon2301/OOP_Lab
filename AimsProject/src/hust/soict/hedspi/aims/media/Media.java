@@ -1,26 +1,36 @@
 package hust.soict.hedspi.aims.media;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
-import java.util.Objects;
 //Trinh Huu An 20225593
-public abstract class Media implements Comparable<Media> {
-    public static final Comparator<Media> COMPARE_BY_TITLE_COST = new MediaComparatorByTitleCost();
-    public static final Comparator<Media> COMPARE_BY_COST_TITLE = new MediaComparatorByCostTitle();
+public abstract class Media {
+    public static final Comparator<Media> COMPARE_BY_TITLE_COST = new Comparator<Media>() {
+        @Override
+        public int compare(Media media1, Media media2) {
+            int titleComparison = media1.getTitle().compareTo(media2.getTitle());
+            if (titleComparison != 0) {
+                return titleComparison;
+            }
+            return Float.compare(media1.getCost(), media2.getCost());
+        }
+    };
+
+    public static final Comparator<Media> COMPARE_BY_COST_TITLE = new Comparator<Media>() {
+        @Override
+        public int compare(Media media1, Media media2) {
+            int costComparison = Float.compare(media1.getCost(), media2.getCost());
+            if (costComparison != 0) {
+                return costComparison;
+            }
+            return media1.getTitle().compareTo(media2.getTitle());
+        }
+    };
+
     private int id;
     private String title;
     private String category;
     private float cost;
 
-    public static int nbMedia = 1;
-
-    public Media() {
-        // Constructor không tham số
-    }
-
-    public Media(int id, String title, String category, float cost) {
-        this.id = id;
+    public Media(String title, String category, float cost) {
         this.title = title;
         this.category = category;
         this.cost = cost;
@@ -30,28 +40,28 @@ public abstract class Media implements Comparable<Media> {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getTitle() {
         return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 
     public String getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
     public float getCost() {
         return cost;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public void setCost(float cost) {
@@ -59,29 +69,28 @@ public abstract class Media implements Comparable<Media> {
     }
 
     @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        Media media = (Media) obj;
+        return title.equals(media.title);
+    }
+
+    @Override
     public String toString() {
-        return "Media: " +
-                "id=" + id +
-                " - title='" + title + '\'' +
-                " - category='" + category + '\'' +
-                " - cost=" + cost;
+        return "Media " +
+                "id = " + id +
+                ", title: " + title +
+                ", category: " + category +
+                ", cost = " + cost;
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Media media = (Media) o;
-        return Objects.equals(title, media.title);
+    public boolean isMatch(String title) {
+        String[] keywords = title.split("\\s+");
+        for (String word : keywords) {
+            if (this.title.toLowerCase().contains(word.toLowerCase()))
+                return true;
+        }
+        return false;
     }
-
-    @Override
-    public int compareTo(Media other) {
-        int titleComparison = this.title.compareTo(other.title);
-        if (titleComparison != 0) return titleComparison;
-
-
-        return Float.compare(other.cost, this.cost);
-    }
-
 }

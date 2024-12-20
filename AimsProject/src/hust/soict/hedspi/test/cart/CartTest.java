@@ -1,37 +1,21 @@
-package hust.soict.hedspi.test.cart;
-
-import hust.soict.hedspi.aims.cart.Cart;
-import hust.soict.hedspi.aims.media.DigitalVideoDisc;
-import hust.soict.hedspi.aims.media.Media;
-
-public class CartTest {
-    public static void main(String[] args) {
-        Cart cart = new Cart();
-
-        Media dvd1 = new DigitalVideoDisc("The Lion King",
-                "Animation", "Roger Allers", 87, 19.95f);
-        cart.addMedia(dvd1);
-
-        Media dvd2 = new DigitalVideoDisc("Star Wars",
-                "Science Fiction", "George Lucas", 87, 24.95f);
-        cart.addMedia(dvd2);
+//package hust.soict.hedspi.test.cart;
 //
-//        DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin",
-//                "Animation", 18.99f);
-//        cart.addDigitalVideoDisc(dvd3);
-
-        cart.printCart();
-
-//        System.out.println("Enter the title of DVD you want to search: ");
-//        Scanner sc = new Scanner(System.in);
-//        int idForSearch = sc.nextInt();
-//        Scanner sc = new Scanner(System.in);
-//        String titleForSearch = sc.nextLine();
+//import hust.soict.hedspi.aims.media.DigitalVideoDisc;
+//import hust.soict.hedspi.aims.store.Store;
 //
-//        if(cart.search(titleForSearch))
-//            System.out.println("Found DVD with title " + titleForSearch + " and the id of this DVD is " + cart.getDiscId(titleForSearch));
-//        else
-//            System.out.println("Not found DVD with title " + titleForSearch);
-
-    }
-}
+//public class CartTest {
+//    public static void main(String[] args) {
+//
+//        Store store = new Store();
+//        DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Matrix", "Sci-Fi",  19.99f,"Wachowski Sisters", 136);
+//        DigitalVideoDisc dvd2 = new DigitalVideoDisc("Inception", "Action",14.99f, "Christopher Nolan", 148 );
+//        DigitalVideoDisc dvd3 = new DigitalVideoDisc("Avatar", "Fantasy",24.99f, "James Cameron", 162 );
+//        DigitalVideoDisc dvd4 = new DigitalVideoDisc( "The Dark Knight", "Action", 18.99f, "Christopher Nolan", 152);
+//        DigitalVideoDisc dvd5 = new DigitalVideoDisc( "Titanic", "Romance", 22.99f,"James Cameron", 195 );
+//
+//
+//        store.addDigitalVideoDisc(dvd1);
+//        store.removeDigitalVideoDisc(dvd1);
+//        System.out.println("Trinh Huu An 20225593");
+//    }
+//}

@@ -1,82 +1,63 @@
 package hust.soict.hedspi.aims.media;
-//Trinh Huu An 20225593
-import java.util.ArrayList;
 
+import java.util.ArrayList;
+import java.util.List;
+//Trinh Huu An 20225593
+import hust.soict.hedspi.aims.exception.PlayerException;
 public class CompactDisc extends Disc implements Playable {
     private String artist;
-    private ArrayList<Track> tracks = new ArrayList<Track>();
-
-    public CompactDisc() {
-        super();
-    }
-
-    public CompactDisc(int id, String title, String category, float cost, String director, String artist) {
-        super(id, title, category, cost, 0, director);
-        this.artist = artist;
-    }
-
-    public CompactDisc(int id, String title, String category, float cost, String director, String artist, ArrayList<Track> tracks) {
-        super(id, title, category, cost, 0, director);
-        this.artist = artist;
-        this.tracks = tracks;
-    }
-
-    public CompactDisc(String title, String category, String artist, float cost) {
-        super(nbMedia++, title, category, cost, 0, null);
-        this.artist = artist;
-        this.tracks = tracks;
-    }
+    private List<Track> tracks = new ArrayList();
 
     public String getArtist() {
         return artist;
     }
 
-    public void addTrack(Track track) {
-        if (tracks.contains(track)) System.out.println("Track is already in the list");
-        else {
-            tracks.add(track);
-            System.out.println("Track added");
+    public List<Track> getTracks() {
+        return tracks;
+    }
+
+    public CompactDisc(String title, String category, float cost, String director, int length, String artist) {
+        super(title, category, cost, director, length);
+        this.artist = artist;
+        this.tracks = tracks;
+    }
+
+    public boolean containsTrack(Track track){
+        if(track == null) return false;
+        for (Track t : tracks){
+            if(track.equals(t)){
+                return true;
+            }
         }
+        return false;
     }
 
-    public void removeTrack(Track track) {
-        if (tracks.contains(track)) {
-            tracks.remove(track);
-            System.out.println("Track removed");
-        } else System.out.println("Track is not in the list");
+    public void addTrack(Track track){
+        if(containsTrack(track)){
+            System.out.println("Track already added");
+            return;
+        }
+
+        tracks.add(track);
+        System.out.println("Added track " + track.getTitle() + " successfully");
+
     }
 
-    public int getLength() {
-        int length = 0;
+    public int getLength(){
+        int totalLength = 0;
         for (Track track : tracks) {
-            length += track.getLength();
+            totalLength += track.getLength();
         }
-        return length;
+        return totalLength;
     }
 
-    @Override
-    public void play() {
-        System.out.println("Playing CompactDisc: " + this.getTitle());
-
-        if (getLength() == 0) System.out.println("CD cannot be played!");
-        else {
-            System.out.println("CD length: " + getLength());
-            System.out.println("Artist: " + this.getArtist());
-
-            for (Track track : tracks) track.play();
+    public void play() throws PlayerException {
+        for (Track track : tracks) {
+            if (track.getLength() <= 0) {
+                throw new PlayerException("Track length is invalid.");
+            }
+            track.play();
         }
     }
 
-    @Override
-    public String toString() {
-        return "CompactDisc: " +
-                "id = " + getId() +
-                " - title = '" + getTitle() + '\'' +
-                " - category = '" + getCategory() + '\'' +
-                " - cost = " + getCost() +
-                " - length = " + getLength() +
-                " - director = '" + getDirector() + '\'' +
-                " - artist = '" + artist + '\'' +
-                " - tracks = " + tracks;
-    }
 }
